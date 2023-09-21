@@ -12,4 +12,11 @@ export class HomeComponent {
   onLoadServers() {
     this.router.navigate(['/servers']);
   }
+
+  onLoadServer(serverId: number) {
+    this.router.navigate(['/servers', serverId, 'edit'], {
+      queryParams: { allowEdit: 1 },
+      fragment: 'loading',
+    });
+  }
 }
